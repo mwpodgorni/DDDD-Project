@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drop.wav-74116551fb1374521f35b8fb5b8d26a3.sample"
+
+[deps]
+
+source_file="res://LD46/sfx/drop.wav"
+dest_files=[ "res://.import/drop.wav-74116551fb1374521f35b8fb5b8d26a3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

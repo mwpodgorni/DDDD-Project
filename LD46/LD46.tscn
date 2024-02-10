@@ -1,0 +1,647 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://LD46/sprite.png" type="Texture" id=1]
+[ext_resource path="res://LD46/player.gd" type="Script" id=2]
+[ext_resource path="res://LD46/slash.gd" type="Script" id=3]
+[ext_resource path="res://LD46/flower.gd" type="Script" id=4]
+[ext_resource path="res://LD46/sword.tscn" type="PackedScene" id=5]
+[ext_resource path="res://LD46/swordplayer.gd" type="Script" id=6]
+[ext_resource path="res://LD46/swords.gd" type="Script" id=7]
+[ext_resource path="res://LD46/animtile.gd" type="Script" id=8]
+[ext_resource path="res://LD46/sfx/step.wav" type="AudioStream" id=9]
+[ext_resource path="res://LD46/sfx/jump.wav" type="AudioStream" id=10]
+[ext_resource path="res://LD46/sfx/hurt.wav" type="AudioStream" id=11]
+[ext_resource path="res://LD46/music/base.ogg" type="AudioStream" id=12]
+
+[sub_resource type="TileSet" id=1]
+0/name = "sprite.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "sprite.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 16, 0, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "sprite.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 32, 0, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+2/z_index = 0
+3/name = "sprite.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 48, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [  ]
+3/z_index = 0
+4/name = "sprite.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 96, 0, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [  ]
+4/z_index = 0
+5/name = "sprite.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 16, 16, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+5/z_index = 0
+6/name = "sprite.png 6"
+6/texture = ExtResource( 1 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 32, 16, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+6/z_index = 0
+7/name = "sprite.png 7"
+7/texture = ExtResource( 1 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 48, 16, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shapes = [  ]
+7/z_index = 0
+8/name = "sprite.png 8"
+8/texture = ExtResource( 1 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 64, 96, 48, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shapes = [  ]
+8/z_index = 0
+9/name = "sprite.png 9"
+9/texture = ExtResource( 1 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 80, 64, 48 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shapes = [  ]
+9/z_index = 0
+10/name = "sprite.png 10"
+10/texture = ExtResource( 1 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 128, 112, 16 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shapes = [  ]
+10/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7, 6 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5, 8 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "spark"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("sprite:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "dead"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 129, 135 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("s:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../lose3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "die"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 136 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("s:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../lose2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "dieflower"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 135 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("s:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../lose1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "jump"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 137 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 133, 134 ]
+}
+
+[sub_resource type="Animation" id=11]
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 129, 128 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("s:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 5, 7 )
+
+[sub_resource type="RectangleShape2D" id=13]
+
+[node name="ld46" type="Node2D"]
+
+[node name="tiles" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 5, 9, 0, 65551, 8, 0, 196608, 8, 0, 196624, 9, 0, 524288, 10, 0, 524295, 10, 0, 524297, 3, 0, 524298, 2, 0, 524302, 10, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0 )
+script = ExtResource( 8 )
+
+[node name="swordplayer" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="0" parent="swordplayer" instance=ExtResource( 5 )]
+position = Vector2( 24, -20 )
+swordgen_path = NodePath("../../../ld46/swords")
+
+[node name="1" parent="swordplayer" instance=ExtResource( 5 )]
+position = Vector2( 24, -20 )
+swordgen_path = NodePath("../../../ld46/swords")
+
+[node name="2" parent="swordplayer" instance=ExtResource( 5 )]
+position = Vector2( 24, -20 )
+swordgen_path = NodePath("../../../ld46/swords")
+
+[node name="3" parent="swordplayer" instance=ExtResource( 5 )]
+position = Vector2( 24, -20 )
+swordgen_path = NodePath("../../../ld46/swords")
+
+[node name="4" parent="swordplayer" instance=ExtResource( 5 )]
+position = Vector2( 24, -20 )
+swordgen_path = NodePath("../../../ld46/swords")
+
+[node name="5" parent="swordplayer" instance=ExtResource( 5 )]
+position = Vector2( 24, -20 )
+swordgen_path = NodePath("../../../ld46/swords")
+
+[node name="6" parent="swordplayer" instance=ExtResource( 5 )]
+position = Vector2( 24, -20 )
+swordgen_path = NodePath("../../../ld46/swords")
+
+[node name="timer" type="Timer" parent="swordplayer"]
+wait_time = 3.263
+
+[node name="flower" type="Area2D" parent="."]
+position = Vector2( -32, 0 )
+collision_mask = 8
+script = ExtResource( 4 )
+
+[node name="leaf0" type="Sprite" parent="flower"]
+position = Vector2( 183, 136 )
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 68
+
+[node name="tween" type="Tween" parent="flower/leaf0"]
+
+[node name="leaf1" type="Sprite" parent="flower"]
+position = Vector2( 183, 136 )
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 69
+
+[node name="tween" type="Tween" parent="flower/leaf1"]
+
+[node name="leaf2" type="Sprite" parent="flower"]
+position = Vector2( 183, 136 )
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 70
+
+[node name="tween" type="Tween" parent="flower/leaf2"]
+
+[node name="leaf3" type="Sprite" parent="flower"]
+position = Vector2( 183, 136 )
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 71
+
+[node name="tween" type="Tween" parent="flower/leaf3"]
+
+[node name="shape" type="CollisionShape2D" parent="flower"]
+position = Vector2( 183, 136 )
+shape = SubResource( 2 )
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 120, 136 )
+collision_mask = 12
+script = ExtResource( 2 )
+
+[node name="s" type="Node2D" parent="player"]
+position = Vector2( 0, 1 )
+
+[node name="swordhit0" type="Sprite" parent="player/s"]
+visible = false
+position = Vector2( 0, -5 )
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 5
+
+[node name="swordhit1" type="Sprite" parent="player/s"]
+visible = false
+position = Vector2( -4, -1 )
+rotation = -0.633555
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 5
+
+[node name="swordhit2" type="Sprite" parent="player/s"]
+visible = false
+position = Vector2( 5, -3 )
+rotation = 0.507891
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 5
+
+[node name="sprite" type="Sprite" parent="player"]
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 128
+
+[node name="shape" type="CollisionShape2D" parent="player"]
+shape = SubResource( 3 )
+
+[node name="sparks" type="Sprite" parent="player"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 132
+
+[node name="anim" type="AnimationPlayer" parent="player/sparks"]
+anims/spark = SubResource( 4 )
+
+[node name="sword" type="Sprite" parent="player"]
+visible = false
+position = Vector2( -4, 3 )
+rotation = -4.44186
+texture = ExtResource( 1 )
+offset = Vector2( 0, 5 )
+vframes = 64
+hframes = 64
+frame = 5
+
+[node name="slash0" type="Area2D" parent="player"]
+monitoring = false
+monitorable = false
+collision_layer = 16
+collision_mask = 8
+script = ExtResource( 3 )
+
+[node name="sprite" type="Sprite" parent="player/slash0"]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -16, -16 )
+vframes = 64
+hframes = 64
+frame = 64
+
+[node name="shape" type="CollisionPolygon2D" parent="player/slash0"]
+polygon = PoolVector2Array( -14, 0, -13, -9, -5, -16, 0, -16, 0, -12, -13, 0 )
+
+[node name="anim" type="AnimationPlayer" parent="player/slash0"]
+anims/attack = SubResource( 5 )
+
+[node name="anim" type="AnimationPlayer" parent="player"]
+anims/dead = SubResource( 6 )
+anims/die = SubResource( 7 )
+anims/dieflower = SubResource( 8 )
+anims/jump = SubResource( 9 )
+anims/run = SubResource( 10 )
+anims/still = SubResource( 11 )
+
+[node name="hit" type="Area2D" parent="player"]
+position = Vector2( -165, -136 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/hit"]
+position = Vector2( 165, 136 )
+shape = SubResource( 12 )
+
+[node name="cooldown" type="Timer" parent="player"]
+wait_time = 0.25
+one_shot = true
+
+[node name="tiles2" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 524288, 5, 0, 524289, 6, 0, 524290, 5, 0, 524291, 7, 0, 524292, 5, 0, 524294, 5, 0, 524296, 5, 0, 524301, 7, 0, 524303, 6, 0, 524304, 7, 0, 524305, 5, 0, 524306, 6, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0 )
+
+[node name="powerup" type="Area2D" parent="."]
+position = Vector2( -9, -20 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="shape" type="CollisionShape2D" parent="powerup"]
+shape = SubResource( 13 )
+
+[node name="sprite" type="Sprite" parent="powerup"]
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 196
+
+[node name="swords" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 94, 26, 3, 1 )
+script = ExtResource( 7 )
+
+[node name="lose1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 154, 85 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 48, 32, 9 )
+
+[node name="lose2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 154, 85 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 56, 32, 9 )
+
+[node name="lose3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 154, 85 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 32, 16 )
+
+[node name="sound" type="Node" parent="."]
+
+[node name="jump" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource( 10 )
+
+[node name="music" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource( 12 )
+autoplay = true
+
+[node name="hurt" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource( 11 )
+
+[node name="step" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource( 9 )
+[connection signal="area_entered" from="flower" to="flower" method="_on_flower_area_entered"]
+[connection signal="area_entered" from="player/slash0" to="player" method="_on_sword_hit"]
+[connection signal="area_entered" from="player/hit" to="player" method="_on_got_hit"]

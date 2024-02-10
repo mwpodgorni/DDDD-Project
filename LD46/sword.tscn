@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://LD46/sprite.png" type="Texture" id=1]
+[ext_resource path="res://LD46/sword.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2, 8 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 8.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "fall"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -16, -0.25, 0, 0.62, 0.447124, 142, -0.1, -1.76813, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shape:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("sprite:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1, 1.5 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "horizontal"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -16, -0.25, 0, 0.25, 0, 332, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3 )
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0, 360.0 ]
+}
+
+[node name="sword" type="Area2D" groups=[
+"swords",
+]]
+position = Vector2( -16, -16 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 2 )
+swordgen_path = NodePath("../../swords")
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 64
+hframes = 64
+frame = 4
+
+[node name="shape" type="CollisionShape2D" parent="."]
+modulate = Color( 1, 1, 1, 1.19209e-07 )
+shape = SubResource( 1 )
+
+[node name="shape_circle" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+disabled = true
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/fall = SubResource( 3 )
+anims/horizontal = SubResource( 4 )
+anims/rotate = SubResource( 5 )
+
+[node name="timer" type="Timer" parent="."]
+one_shot = true

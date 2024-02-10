@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/step.wav-3282fcf888172773c7fe68c78b60a0de.sample"
+
+[deps]
+
+source_file="res://postjam/sfx/step.wav"
+dest_files=[ "res://.import/step.wav-3282fcf888172773c7fe68c78b60a0de.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

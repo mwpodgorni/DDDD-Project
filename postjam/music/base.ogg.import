@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/base.ogg-3b37a511353e343bbf98b13c547a8204.oggstr"
+
+[deps]
+
+source_file="res://postjam/music/base.ogg"
+dest_files=[ "res://.import/base.ogg-3b37a511353e343bbf98b13c547a8204.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

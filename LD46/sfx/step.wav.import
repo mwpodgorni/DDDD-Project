@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/step.wav-056821d367eb0c3292f69029b2aad9f1.sample"
+
+[deps]
+
+source_file="res://LD46/sfx/step.wav"
+dest_files=[ "res://.import/step.wav-056821d367eb0c3292f69029b2aad9f1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
