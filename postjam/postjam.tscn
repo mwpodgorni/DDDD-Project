@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://postjam/sprite.png" type="Texture" id=1]
 [ext_resource path="res://postjam/player.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://postjam/sfx/jump.wav" type="AudioStream" id=10]
 [ext_resource path="res://postjam/sfx/hurt.wav" type="AudioStream" id=11]
 [ext_resource path="res://postjam/music/base.ogg" type="AudioStream" id=12]
+[ext_resource path="res://postjam/Score.gd" type="Script" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "sprite.png 0"
@@ -22,6 +23,10 @@
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
 1/name = "sprite.png 1"
@@ -32,6 +37,10 @@
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
 2/name = "sprite.png 2"
@@ -42,6 +51,10 @@
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
 3/name = "sprite.png 3"
@@ -52,6 +65,10 @@
 3/tile_mode = 0
 3/occluder_offset = Vector2( 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
 4/name = "sprite.png 4"
@@ -62,6 +79,10 @@
 4/tile_mode = 0
 4/occluder_offset = Vector2( 0, 0 )
 4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
 5/name = "sprite.png 5"
@@ -72,6 +93,10 @@
 5/tile_mode = 0
 5/occluder_offset = Vector2( 0, 0 )
 5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
 5/shapes = [  ]
 5/z_index = 0
 6/name = "sprite.png 6"
@@ -82,6 +107,10 @@
 6/tile_mode = 0
 6/occluder_offset = Vector2( 0, 0 )
 6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
 7/name = "sprite.png 7"
@@ -92,6 +121,10 @@
 7/tile_mode = 0
 7/occluder_offset = Vector2( 0, 0 )
 7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
 7/shapes = [  ]
 7/z_index = 0
 8/name = "sprite.png 8"
@@ -102,6 +135,10 @@
 8/tile_mode = 0
 8/occluder_offset = Vector2( 0, 0 )
 8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
 8/shapes = [  ]
 8/z_index = 0
 9/name = "sprite.png 9"
@@ -112,6 +149,10 @@
 9/tile_mode = 0
 9/occluder_offset = Vector2( 0, 0 )
 9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
 9/shapes = [  ]
 9/z_index = 0
 10/name = "sprite.png 10"
@@ -122,6 +163,10 @@
 10/tile_mode = 0
 10/occluder_offset = Vector2( 0, 0 )
 10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
 10/shapes = [  ]
 10/z_index = 0
 
@@ -433,8 +478,8 @@ script = ExtResource( 4 )
 [node name="leaf0" type="Sprite" parent="flower"]
 position = Vector2( 183, 136 )
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 68
 
 [node name="tween" type="Tween" parent="flower/leaf0"]
@@ -442,8 +487,8 @@ frame = 68
 [node name="leaf1" type="Sprite" parent="flower"]
 position = Vector2( 183, 136 )
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 69
 
 [node name="tween" type="Tween" parent="flower/leaf1"]
@@ -451,8 +496,8 @@ frame = 69
 [node name="leaf2" type="Sprite" parent="flower"]
 position = Vector2( 183, 136 )
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 70
 
 [node name="tween" type="Tween" parent="flower/leaf2"]
@@ -460,8 +505,8 @@ frame = 70
 [node name="leaf3" type="Sprite" parent="flower"]
 position = Vector2( 183, 136 )
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 71
 
 [node name="tween" type="Tween" parent="flower/leaf3"]
@@ -482,8 +527,8 @@ position = Vector2( 0, 1 )
 visible = false
 position = Vector2( 0, -5 )
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 5
 
 [node name="swordhit1" type="Sprite" parent="player/s"]
@@ -491,8 +536,8 @@ visible = false
 position = Vector2( -4, -1 )
 rotation = -0.633555
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 5
 
 [node name="swordhit2" type="Sprite" parent="player/s"]
@@ -500,14 +545,14 @@ visible = false
 position = Vector2( 5, -3 )
 rotation = 0.507891
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 5
 
 [node name="sprite" type="Sprite" parent="player"]
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 128
 
 [node name="shape" type="CollisionShape2D" parent="player"]
@@ -516,8 +561,8 @@ shape = SubResource( 3 )
 [node name="sparks" type="Sprite" parent="player"]
 modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 132
 
 [node name="anim" type="AnimationPlayer" parent="player/sparks"]
@@ -529,15 +574,15 @@ position = Vector2( -4, 3 )
 rotation = -4.44186
 texture = ExtResource( 1 )
 offset = Vector2( 0, 5 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 5
 
 [node name="slash0" type="Area2D" parent="player"]
-monitoring = false
-monitorable = false
 collision_layer = 16
 collision_mask = 8
+monitoring = false
+monitorable = false
 script = ExtResource( 3 )
 
 [node name="sprite" type="Sprite" parent="player/slash0"]
@@ -545,8 +590,8 @@ visible = false
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -16, -16 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 64
 
 [node name="shape" type="CollisionPolygon2D" parent="player/slash0"]
@@ -594,8 +639,8 @@ shape = SubResource( 13 )
 
 [node name="sprite" type="Sprite" parent="powerup"]
 texture = ExtResource( 1 )
-vframes = 64
 hframes = 64
+vframes = 64
 frame = 196
 
 [node name="swords" type="Sprite" parent="."]
@@ -642,6 +687,12 @@ stream = ExtResource( 11 )
 
 [node name="step" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource( 9 )
+
+[node name="Score" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+script = ExtResource( 13 )
+
 [connection signal="area_entered" from="flower" to="flower" method="_on_flower_area_entered"]
 [connection signal="area_entered" from="player/slash0" to="player" method="_on_sword_hit"]
 [connection signal="area_entered" from="player/hit" to="player" method="_on_got_hit"]

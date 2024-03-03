@@ -5,6 +5,7 @@ var hit_petals = - 1
 const PETALS = 4
 
 func hit():
+	print("HIT PETALS")
 	hit_petals += 1;
 	if hit_petals < PETALS:
 		var tween = petals[hit_petals].get_node("tween")

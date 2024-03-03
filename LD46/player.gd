@@ -50,6 +50,9 @@ func _process(_d):
 			$anim.play("dead")
 			g.completed = true
 	if Input.is_action_just_pressed("ui_reload"):
+		gl.score=0
+		gl.health=3
+		gl.flowerHealth=4
 		get_tree().reload_current_scene()
 	vel.y += g.gravity
 	position += (_d * vel)
@@ -107,15 +110,19 @@ func state_normal(_d):
 
 
 func _on_sword_hit(body):
+	print("Sword hit")
 	if body.hitting:
 		$sparks.position = body.position - position
 		$sparks.rotation = $sparks.position.angle() - PI / 2
 		get_node("sparks/anim").play("spark")
 		body.hit($sparks.position.normalized())
+		gl.score+=100
 
 func _on_got_hit(area):
+	print("Got hit")
 	get_node("../sound/hurt").play()
 	hits = clamp(hits + 1, 0, MAX_HITS - 1)
+	gl.health = MAX_HITS-1-hits
 	area.reset()
 	swords[hits].visible = true
 	if hits == MAX_HITS - 1 and not g.completed:

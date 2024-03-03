@@ -6,6 +6,7 @@ const PETALS = 4
 
 func hit():
 	hit_petals += 1;
+	gl.flowerHealth=PETALS -1- hit_petals
 	if hit_petals < PETALS:
 		var tween = petals[hit_petals].get_node("tween")
 		tween.interpolate_property(petals[hit_petals], "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)

@@ -70,6 +70,7 @@ func reset():
 
 
 
+
 func _process(_d):
 	if rotating:
 		set_position(position + dir * _d)
