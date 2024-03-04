@@ -12,6 +12,8 @@ var jump = 0
 var jumping = false
 var jump_base = 50
 var can_jump = false
+var time = 0
+
 func _ready():
 	g.lost = 0
 	g.completed = false
@@ -60,6 +62,10 @@ func _process(_d):
 		position.y = 136
 		vel.y = 0
 		can_jump = true
+	if gl.health > 0 && time >= 1:
+		time = 0
+		gl.score += 2
+	time += _d
 	
 func state_normal(_d):
 	keys = [0, 0, 0, 0]

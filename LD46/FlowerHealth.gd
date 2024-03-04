@@ -8,7 +8,8 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.modulate = Color(0, 0, 0, 1)
+	self.modulate = Color(255, 255, 255, 1)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.text = "FLOWER HEALTH: "+str(gl.flowerHealth)
+	self.text = str(gl.flowerHealth)
+	if(gl.flowerHealth <= 2): self.modulate = Color(255, 0, 0, 1) 

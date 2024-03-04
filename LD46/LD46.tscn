@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://LD46/sprite.png" type="Texture" id=1]
 [ext_resource path="res://LD46/player.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://LD46/SCORE.gd" type="Script" id=13]
 [ext_resource path="res://LD46/HEALTH.gd" type="Script" id=14]
 [ext_resource path="res://LD46/FlowerHealth.gd" type="Script" id=15]
+[ext_resource path="res://pixelFont.tres" type="DynamicFont" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "sprite.png 0"
@@ -690,29 +691,66 @@ stream = ExtResource( 11 )
 [node name="step" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource( 9 )
 
-[node name="SCORE" type="Label" parent="."]
-margin_left = 7.0
-margin_top = 9.0
-margin_right = 48.0
-margin_bottom = 23.0
+[node name="Score" type="Node" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+margin_left = 297.0
+margin_top = 5.0
+margin_right = 317.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 16 )
 text = "SCORE"
+align = 2
+
+[node name="Counter" type="Label" parent="Score"]
+margin_left = 301.0
+margin_top = 13.0
+margin_right = 317.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 16 )
+text = "1000"
+align = 2
 script = ExtResource( 13 )
 
-[node name="HEALTH" type="Label" parent="."]
-margin_left = 7.0
-margin_top = 24.0
-margin_right = 57.0
-margin_bottom = 38.0
-text = "HEALTH"
-script = ExtResource( 14 )
+[node name="Petals" type="Node" parent="."]
 
-[node name="FlowerHealth" type="Label" parent="."]
-margin_left = 7.0
-margin_top = 40.0
-margin_right = 114.0
-margin_bottom = 54.0
-text = "FLOWER HEALTH"
+[node name="PetalsLabel" type="Label" parent="Petals"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 29.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 16 )
+text = "Petals:"
+
+[node name="Counter" type="Label" parent="Petals"]
+margin_left = 34.0
+margin_top = 5.0
+margin_right = 55.0
+margin_bottom = 11.0
+rect_pivot_offset = Vector2( -56, 19 )
+custom_fonts/font = ExtResource( 16 )
+text = "4"
 script = ExtResource( 15 )
+
+[node name="Health" type="Node" parent="."]
+
+[node name="HealthLabel" type="Label" parent="Health"]
+margin_left = 5.0
+margin_top = 13.0
+margin_right = 13.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 16 )
+text = "HEALTH:"
+
+[node name="Counter" type="Label" parent="Health"]
+margin_left = 34.0
+margin_top = 13.0
+margin_right = 55.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( -56, 19 )
+custom_fonts/font = ExtResource( 16 )
+text = "3"
+script = ExtResource( 14 )
 
 [connection signal="area_entered" from="flower" to="flower" method="_on_flower_area_entered"]
 [connection signal="area_entered" from="player/slash0" to="player" method="_on_sword_hit"]
