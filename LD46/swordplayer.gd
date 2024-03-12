@@ -1,6 +1,7 @@
 extends Node2D
 onready var player = get_node("../player")
 onready var g = get_node("/root/g")
+onready var main = get_node("../../Main")
 var swords = []
 var is_done = - 1
 var timers = []
@@ -55,38 +56,57 @@ func next_wave():
 		
 func win():
 	g.lost = 3
+	main.updateCurrentGameField("wonGame", true)
 func wave0():
 	for i in range(0, swords.size()):
+		main.increaseGameFieldValue("droppedSwords")
 		swords[i].position.x = i * 40 + 40
 		swords[i].start_delay(i * 0.5 + 0.1)
 func wave1():
+	main.increaseGameFieldValue("wonWaves")
 	for i in range(0, swords.size()):
+		main.increaseGameFieldValue("droppedSwords")
 		swords[i].position.x = 280 - i * 40
 		swords[i].start_delay(i * 0.5 + 0.1)
 func wave2():
+	main.increaseGameFieldValue("wonWaves")
 	for i in range(0, swords.size()):
+		main.increaseGameFieldValue("droppedSwords")
 		swords[i].position.x = i * 10 + 106
 		if i > 3:
 			swords[i].start_delay(3.1 - i * 0.5)
 		else :
 			swords[i].start_delay(i * 0.5 + 0.1)
 func wave3():
+	main.increaseGameFieldValue("wonWaves")
 	for i in range(0, swords.size()):
+		main.increaseGameFieldValue("droppedSwords")
 		swords[i].position.x = 280 - i * 40
 		swords[i].start_delay(i * 0.5 + 0.1)
 func wave4():
+	main.increaseGameFieldValue("wonWaves")
 	for i in range(0, swords.size()):
+		main.increaseGameFieldValue("droppedSwords")
 		swords[i].position.x = i * 40 + 40
 		swords[i].start_delay(i * 0.5 + 0.1)
 func wave5():
+	main.increaseGameFieldValue("wonWaves")
 	for i in range(0, swords.size()):
+		main.increaseGameFieldValue("droppedSwords")
 		swords[i].position.x = 280 - i * 40
 		swords[i].start_delay(i * 0.5 + 0.1)
 func wave6():
+	main.increaseGameFieldValue("wonWaves")
 	for i in range(0, swords.size()):
+		main.increaseGameFieldValue("droppedSwords")
 		swords[i].position.x = i * 40 + 40
 		swords[i].start_delay(i * 0.5 + 0.1)
 func wave7():
+	main.increaseGameFieldValue("wonWaves")
 	for i in range(0, swords.size()):
+		main.increaseGameFieldValue("droppedSwords")
 		swords[i].position.x = 280 - i * 40
 		swords[i].start_delay(i * 0.5 + 0.1)
+
+func currentWave():
+	return wave

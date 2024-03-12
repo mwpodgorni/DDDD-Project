@@ -1,6 +1,8 @@
 extends KinematicBody2D
 onready var g = get_node("/root/g")
 onready var swords = [get_node("s/swordhit0"), get_node("s/swordhit1"), get_node("s/swordhit2")]
+onready var main = get_node("../../Main")
+onready var swordplayer = get_node("../swordplayer")
 var hits = - 1
 const MAX_HITS = 3
 var speed = 10
@@ -18,6 +20,7 @@ func _ready():
 	g.lost = 0
 	g.completed = false
 	$cooldown.connect("timeout", self, "_on_cooldown_end")
+	
 var can_hit = true
 func _on_cooldown_end():
 	can_hit = true
@@ -45,9 +48,13 @@ func _process(_d):
 		if g.lost == 1:
 			$anim.play("dieflower")
 			g.completed = true
+			main.updateCurrentGameField("gameOverReason", "flower")
+			main.saveToJson()
 		elif g.lost == 2:
 			$anim.play("die")
 			g.completed = true
+			main.updateCurrentGameField("gameOverReason", "player")
+			main.saveToJson()
 		elif g.lost == 3:
 			$anim.play("dead")
 			g.completed = true
@@ -123,6 +130,10 @@ func _on_sword_hit(body):
 		get_node("sparks/anim").play("spark")
 		body.hit($sparks.position.normalized())
 		gl.score+=100
+		main.increaseGameFieldValue("dodgedSwords")
+		if main.getCurrentGameField("firstDeflectedSwordWave")==0:
+			main.updateCurrentGameField("firstDeflectedSwordWave", swordplayer.currentWave())
+		
 
 func _on_got_hit(area):
 	print("Got hit")
@@ -138,3 +149,7 @@ func _on_got_hit(area):
 func die():
 	$hit.set_deferred("monitoring", false)
 	vel.x = 0
+
+
+
+
