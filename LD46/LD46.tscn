@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://LD46/sprite.png" type="Texture" id=1]
 [ext_resource path="res://LD46/player.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://LD46/sfx/hurt.wav" type="AudioStream" id=11]
 [ext_resource path="res://LD46/music/base.ogg" type="AudioStream" id=12]
 [ext_resource path="res://LD46/SCORE.gd" type="Script" id=13]
+[ext_resource path="res://LD46/HEALTH.gd" type="Script" id=14]
 [ext_resource path="res://LD46/FlowerHealth.gd" type="Script" id=15]
 [ext_resource path="res://pixelFont.tres" type="DynamicFont" id=16]
 
@@ -850,15 +851,43 @@ vframes = 64
 frame = 71
 
 [node name="Health" type="Node" parent="."]
+script = ExtResource( 14 )
 
 [node name="HealthLabel" type="Label" parent="Health"]
 margin_left = 5.0
-margin_top = 18.0
+margin_top = 16.0
 margin_right = 31.0
-margin_bottom = 24.0
+margin_bottom = 22.0
 custom_colors/font_color = Color( 0.129412, 0.168627, 0.376471, 1 )
 custom_fonts/font = ExtResource( 16 )
 text = "Player:"
+
+[node name="Heart" type="Sprite" parent="Health"]
+position = Vector2( -7, 27 )
+scale = Vector2( 0.884766, 0.930664 )
+texture = ExtResource( 1 )
+offset = Vector2( 54.2517, -7.52151 )
+hframes = 64
+vframes = 64
+frame = 264
+
+[node name="Heart2" type="Sprite" parent="Health"]
+position = Vector2( 4, 27 )
+scale = Vector2( 0.884766, 0.930664 )
+texture = ExtResource( 1 )
+offset = Vector2( 54.2517, -7.52151 )
+hframes = 64
+vframes = 64
+frame = 264
+
+[node name="Heart3" type="Sprite" parent="Health"]
+position = Vector2( 15, 27 )
+scale = Vector2( 0.884766, 0.930664 )
+texture = ExtResource( 1 )
+offset = Vector2( 54.2517, -7.52151 )
+hframes = 64
+vframes = 64
+frame = 264
 
 [connection signal="area_entered" from="flower" to="flower" method="_on_flower_area_entered"]
 [connection signal="area_entered" from="player/slash0" to="player" method="_on_sword_hit"]
