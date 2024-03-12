@@ -66,6 +66,7 @@ func saveToJson():
 	 
 		file.store_line(jsonStr)
 		file.close()
+		clearCurrentGame()
 		print("Game data saved successfully!")
 	else:
 		print("couldnt save data")
