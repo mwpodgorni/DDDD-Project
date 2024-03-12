@@ -1,10 +1,5 @@
 extends Label
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	self.modulate = Color(255, 255, 255, 1)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	self.text = str(gl.health)
-	if(gl.health < 1): self.modulate = Color(255, 0, 0, 1)
+	if(gl.health < 2): self.modulate = Color(255, 0, 0, 1)
