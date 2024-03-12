@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var gameData;
+var gameData=null;
 var currentGame = {
 		 "timestamp": null,
 		 "droppedSwords": 0,
@@ -48,33 +48,27 @@ func loadFromJson():
 			return  
 			
 		gameData=jsonData
-#			for play in jsonData["plays"]:
-#				print("\tTimestamp:", play["timestamp"])
-#				print("\tDropped Swords:", play["droppedSwords"])
-#				print("\tDodged Swords:", play["dodgedSwords"])
-#				print("\tWon Waves:", play["wonWaves"])
-#				print("\tGame Over Reason:", play["gameOverReason"])
-#				print("\tWon Game:", play["wonGame"])
-#				print("\tFirst Deflected Sword Wave:", play["firstDeflectedSwordWave"])
-#				print("----------")
+
 	else:
 		print("Failed to open file for reading.")
 		
 func saveToJson():
-	print("saveToJson")
-	currentGame["timestamp"] = get_timestamp()
-	gameData.append(currentGame)  
- 
-	var file = File.new()
-	if file.open(g.projectPath, File.WRITE) != OK:
-		print("Failed to open file for writing.")
-		return
- 
-	var jsonStr = JSON.print(gameData)
- 
-	file.store_line(jsonStr)
-	file.close()
-	print("Game data saved successfully!")
+	if gameData!=null:
+		currentGame["timestamp"] = get_timestamp()
+		gameData.append(currentGame)  
+	 
+		var file = File.new()
+		if file.open(g.projectPath, File.WRITE) != OK:
+			print("Failed to open file for writing.")
+			return
+	 
+		var jsonStr = JSON.print(gameData)
+	 
+		file.store_line(jsonStr)
+		file.close()
+		print("Game data saved successfully!")
+	else:
+		print("couldnt save data")
 		
 func get_timestamp():
 	var unix_timestamp = Time.get_unix_time_from_system()
