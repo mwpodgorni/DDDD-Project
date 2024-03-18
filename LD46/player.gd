@@ -62,6 +62,7 @@ func _process(_d):
 		gl.score=0
 		gl.health=3
 		gl.flowerHealth=4
+		main.clearCurrentGame()
 		get_tree().reload_current_scene()
 	vel.y += g.gravity
 	position += (_d * vel)

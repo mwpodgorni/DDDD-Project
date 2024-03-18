@@ -1,1 +1,1 @@
-[{"timestamp":1710271183,"droppedSwords":42,"dodgedSwords":4,"wonWaves":4,"gameOverReason":"flower","wonGame":false,"firstDeflectedSwordWave":2}]
+[{"timePassed":16,"timestamp":1710796527.746,"droppedSwords":21,"dodgedSwords":1,"wonWaves":2,"gameOverReason":"player","wonGame":false,"firstDeflectedSwordWave":1},{"timePassed":12,"timestamp":1710796552.093,"droppedSwords":14,"dodgedSwords":0,"wonWaves":1,"gameOverReason":"player","wonGame":false,"firstDeflectedSwordWave":0}]

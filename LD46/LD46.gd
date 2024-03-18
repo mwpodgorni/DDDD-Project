@@ -3,6 +3,7 @@ extends Node2D
 
 var gameData=null;
 var currentGame = {
+		 "timePassed":null,
 		 "timestamp": null,
 		 "droppedSwords": 0,
 		 "dodgedSwords": 0,
@@ -11,10 +12,13 @@ var currentGame = {
 		 "wonGame": false,
 		 "firstDeflectedSwordWave": 0
 	  }
-
+var start_time;
+var end_time;
 func _ready():
+	print("READY")
 	loadFromJson()
 	connect("game_over", self, "saveToJson")
+	start_time = OS.get_unix_time()
 
 func clearCurrentGame():
 	currentGame = {
@@ -26,6 +30,7 @@ func clearCurrentGame():
 		 "wonGame": false,
 		 "firstDeflectedSwordWave": 0
 	  }
+	start_time = OS.get_unix_time()
 	
 func getCurrentGameField(key):
 	return currentGame[key]
@@ -53,7 +58,12 @@ func loadFromJson():
 		print("Failed to open file for reading.")
 		
 func saveToJson():
+	print("SAVE TO JSON")
 	if gameData!=null:
+		end_time=OS.get_unix_time()
+		var passed=end_time-start_time
+		print("PASSED TIME",passed)
+		currentGame["timePassed"]=passed
 		currentGame["timestamp"] = get_timestamp()
 		gameData.append(currentGame)  
 	 
@@ -74,3 +84,5 @@ func saveToJson():
 func get_timestamp():
 	var unix_timestamp = Time.get_unix_time_from_system()
 	return unix_timestamp
+
+
