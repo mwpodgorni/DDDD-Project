@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="It Rains Swords"
-run/main_scene="res://choice.tscn"
+run/main_scene="res://start.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -32,6 +32,10 @@ window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[global]
+
+background=false
 
 [input]
 
