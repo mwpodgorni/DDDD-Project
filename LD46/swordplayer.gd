@@ -110,3 +110,6 @@ func wave7():
 
 func currentWave():
 	return wave
+
+func maxWave():
+	return WAVE_MAX
