@@ -3,6 +3,7 @@ extends Node2D
 
 var gameData=null;
 var currentGame = {
+		 "version": 'A',
 		 "timePassed":null,
 		 "timestamp": null,
 		 "droppedSwords": 0,
@@ -22,6 +23,7 @@ func _ready():
 
 func clearCurrentGame():
 	currentGame = {
+		 "version": 'A',
 		 "timestamp": null,
 		 "droppedSwords": 0,
 		 "dodgedSwords": 0,
