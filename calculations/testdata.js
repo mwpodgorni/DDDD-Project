@@ -909,7 +909,7 @@ console.log('frustration mode:', calculateMode(frustrationB));
 console.log('frustration range:', calculateRange(frustrationB));
 console.log('frustration deviation:', calculateStandardDeviation(frustrationB));
 console.log('---------------------------------');
-
+// displayTimePassed()
 function calculateMean(dataset){
     // console.log('calculateMean dataset:', dataset)
     let sum = 0;
@@ -968,7 +968,7 @@ function calculateStandardDeviation(dataset){
     return Math.sqrt(sum / dataset.length);
 }
 function displayTimePassed(){
-    for(let i = 0; i < gameA.length; i++){
-        console.log(gameA[i].timePassed);
+    for(let i = 0; i < gameB.length; i++){
+        console.log(gameB[i].timePassed);
     }
 }
